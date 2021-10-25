@@ -4,10 +4,14 @@ import java.util.List;
 
 public interface ExportadorListaProduto {
 	
-	
-	String fecharLinhaTitulo();
-	String abrirColuna(String valor);
+	String abrirTabela();
+	String fecharTabela();
+	String abrirLinha();
 	String fecharLinha();
+	String fecharLinhaTitulos();
+	String abrirColuna(String valor);
+	String fecharColuna();
+	
 	
 	String exportar(List<Produto> produtos);
 	

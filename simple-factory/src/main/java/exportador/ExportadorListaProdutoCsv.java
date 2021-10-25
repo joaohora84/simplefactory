@@ -1,33 +1,49 @@
 package exportador;
 
-import java.util.List;
-
-public class ExportadorListaProdutoCsv extends AbstractExportadorListaProduto{
+public class ExportadorListaProdutoCsv extends AbstractExportadorListaProduto {
 
 	@Override
-	public String fecharLinhaTitulo() {
-		// TODO Auto-generated method stub
-		return "\n";
+	public String abrirTabela() {
+
+		return "";
 	}
 
 	@Override
-	public String abrirColuna(String valor) {
-		// TODO Auto-generated method stub
-		return ";";
+	public String fecharTabela() {
+
+		return "";
+	}
+
+	@Override
+	public String abrirLinha() {
+		return "";
 	}
 
 	@Override
 	public String fecharLinha() {
-		// TODO Auto-generated method stub
+
 		return "\n";
+
 	}
 
 	@Override
-	public String exportar(List<Produto> produtos) {
-		
-		
-		
-		return null;
+	public String fecharLinhaTitulos() {
+
+		return "";
+	}
+
+	@Override
+	public String abrirColuna(String valor) {
+
+		return valor;
+
+	}
+
+	@Override
+	public String fecharColuna() {
+
+		return ",";
+
 	}
 
 }

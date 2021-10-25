@@ -2,13 +2,26 @@ package exportador;
 
 public class Produto {
 	
+	private static int ultimoId = 0;
+	
 	private int id;
 	private String decricao;
 	private String marca;
 	private String modelo;
 	private int estoque;
 	
-	public Produto(String string, String string2, String string3, int i) {
+	public Produto(){
+        this.id = ++ultimoId;
+    }
+	
+	public Produto(String descricao, String marca, String modelo, int estoque) {
+		
+		this();
+		this.decricao = descricao;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.estoque = estoque;
+		
 		
 	}
 	public int getId() {

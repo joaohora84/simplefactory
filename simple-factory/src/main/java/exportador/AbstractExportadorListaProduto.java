@@ -3,6 +3,7 @@ package exportador;
 import java.util.Arrays;
 import java.util.List;
 
+
 public abstract class AbstractExportadorListaProduto implements ExportadorListaProduto{
 	
 	protected final List<String> TITULOS_COLUNAS = Arrays.asList("Id", "Descrição", "Marca", "Modelo", "estoque");
@@ -12,11 +13,17 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
 	public String exportar(List<Produto> produtos) {
 		
 		final StringBuilder sb = new StringBuilder();
+		
+		sb.append(abrirTabela());
 
         sb.append(gerarColunasLinha(TITULOS_COLUNAS));
         
+        sb.append(fecharLinhaTitulos());
+        
         gerarLinhasProdutos(sb, produtos);
 
+        sb.append(fecharTabela());
+        
         return sb.toString();
         
 	}
@@ -41,9 +48,13 @@ public abstract class AbstractExportadorListaProduto implements ExportadorListaP
 		
         StringBuilder sb = new StringBuilder();
         
+        sb.append(abrirLinha());
+        
         for (String valor : valores) {
         	
             sb.append(abrirColuna(valor));
+            sb.append(fecharColuna());
+            
             
         }
         
